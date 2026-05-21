@@ -70,18 +70,6 @@
       transition: transform 0.1s ease;
       box-shadow: 0 0 10px var(--laser-glow-red), inset 0 0 5px var(--laser-glow-red);
     }
-    #cursor-trail {
-      position: fixed;
-      width: 6px;
-      height: 6px;
-      background: var(--laser-orange);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 99998;
-      transition: all 0.15s ease;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 8px var(--laser-glow-orange);
-    }
     a:hover ~ #cursor, button:hover ~ #cursor { transform: translate(-50%,-50%) rotate(45deg) scale(1.8); }
 
     /* ====== SCANLINE OVERLAY ====== */
@@ -1006,7 +994,6 @@
 
 <!-- Cursor -->
 <div id="cursor"></div>
-<div id="cursor-trail"></div>
 
 <!-- Overlays -->
 <div id="scanlines"></div>
@@ -1226,7 +1213,6 @@
 <script>
   // ====== CUSTOM CURSOR ======
   const cursor = document.getElementById('cursor');
-  const cursorTrail = document.getElementById('cursor-trail');
   let mouseX = 0, mouseY = 0;
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
